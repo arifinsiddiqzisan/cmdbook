@@ -65,74 +65,86 @@ It is designed for developers and Linux users who frequently customize their wor
 
 ## Installation
 
-### Manual Installation
-
-Clone the repository:
+### Linux (Manual Installation)
 
 ```bash
 git clone https://github.com/arifinsiddiqzisan/cmdbook.git
 cd cmdbook
-```
-
-Install dependencies:
-
-```bash
 pip install textual rich
-```
-
-Move the script to a system-wide location:
-
-```bash
 sudo mv cmdbook.py /usr/local/bin/cmdbook
-```
-
-Make it executable:
-
-```bash
 sudo chmod +x /usr/local/bin/cmdbook
-```
-
-Create the data directory:
-
-```bash
 mkdir -p ~/.cmdbook
-```
-
-Create the data file:
-
-```bash
 touch ~/.cmdbook/commands.json
 echo "[]" > ~/.cmdbook/commands.json
-```
-
-Run the application:
-
-```bash
 cmdbook
 ```
 
 ---
 
-### Alternative (User-only Installation)
-
-If you prefer not to use `sudo`, install it locally:
+### Linux (User-only Installation)
 
 ```bash
 mkdir -p ~/.local/bin
 mv cmdbook.py ~/.local/bin/cmdbook
 chmod +x ~/.local/bin/cmdbook
-```
-
-Ensure the path is available:
-
-```bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+cmdbook
 ```
 
-Then run:
+---
 
-```bash
+### Windows Installation
+
+1. Clone the repository:
+
+```bat
+git clone https://github.com/arifinsiddiqzisan/cmdbook.git
+cd cmdbook
+```
+
+2. Install dependencies:
+
+```bat
+pip install textual rich
+```
+
+3. Create a tools directory:
+
+```bat
+mkdir C:\tools
+```
+
+4. Move the script:
+
+```bat
+move cmdbook.py C:\tools\cmdbook.py
+```
+
+5. Create a batch file (`cmdbook.bat`) inside `C:\tools\`:
+
+```bat
+@echo off
+python C:\tools\cmdbook.py %*
+```
+
+6. Add `C:\tools` to Environment Variables:
+
+* Open System Properties
+* Go to Environment Variables
+* Edit `Path`
+* Add: `C:\tools`
+
+7. Create data directory:
+
+```bat
+mkdir %USERPROFILE%\.cmdbook
+echo [] > %USERPROFILE%\.cmdbook\commands.json
+```
+
+8. Run:
+
+```bat
 cmdbook
 ```
 
@@ -143,15 +155,16 @@ cmdbook
 * Python 3
 * pip
 
-Install pip if not available:
+Linux:
 
 ```bash
 sudo apt install python3-pip
+pip install textual rich
 ```
 
-Install required Python packages:
+Windows:
 
-```bash
+```bat
 pip install textual rich
 ```
 
@@ -165,7 +178,11 @@ CmdBook stores all commands in:
 ~/.cmdbook/commands.json
 ```
 
-This keeps your data separate from system files and avoids permission issues.
+Windows equivalent:
+
+```
+C:\Users\YourName\.cmdbook\commands.json
+```
 
 ---
 
@@ -215,4 +232,4 @@ Contributions are welcome. You can:
 
 ## Author
 
-Arifin Siddiq Zisan
+Zisan
