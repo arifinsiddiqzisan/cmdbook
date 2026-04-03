@@ -232,4 +232,4 @@ Contributions are welcome. You can:
 
 ## Author
 
-Zisan
+Arifin Siddiq Zisan
