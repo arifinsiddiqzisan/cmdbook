@@ -6,6 +6,30 @@ It is designed for developers and Linux users who frequently customize their wor
 
 ---
 
+## Preview
+
+### Interface
+
+![Interface](preview/interface.png)
+
+### Add Command
+
+![Add Command](preview/add-commands.png)
+
+### Edit Command
+
+![Edit Command](preview/edit-commands.png)
+
+### Manual View
+
+![Manual](preview/manual.png)
+
+### Themes
+
+![Themes](preview/themes/themes.png)
+
+---
+
 ## Features
 
 * Interactive TUI with keyboard navigation
