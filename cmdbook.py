@@ -7,18 +7,31 @@ from textual.screen import Screen
 from rich.text import Text
 import json, os, platform
 
-FILE = os.path.expanduser("~/.cmdbook/commands.json")
+
+# ------------------ PATH SETUP ------------------
+if platform.system() == "Windows":
+    BASE_DIR = os.path.join(os.environ["USERPROFILE"], "cmdbook")
+else:
+    BASE_DIR = os.path.join(os.path.expanduser("~"), ".cmdbook")
+
+FILE = os.path.join(BASE_DIR, "commands.json")
+
 
 # ------------------ DATA ------------------
 def load():
+    os.makedirs(BASE_DIR, exist_ok=True)
+
     if not os.path.exists(FILE):
-        return []
+        with open(FILE, "w") as f:
+            json.dump([], f)
+
     with open(FILE) as f:
         return json.load(f)
 
 
 def save(data):
-    os.makedirs(os.path.dirname(FILE), exist_ok=True)
+    os.makedirs(BASE_DIR, exist_ok=True)
+
     with open(FILE, "w") as f:
         json.dump(data, f, indent=2)
 
@@ -171,6 +184,7 @@ class CmdBook(App):
 # ------------------ RUN ------------------
 def main():
     CmdBook().run()
+
 
 if __name__ == "__main__":
     main()
