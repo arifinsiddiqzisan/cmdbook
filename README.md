@@ -38,6 +38,7 @@ It is designed for developers and Linux users who frequently customize their wor
 * Persistent storage using JSON
 * Lightweight and fast
 * Clean and minimal interface
+* Automatic data directory creation (no manual setup required)
 
 ---
 
@@ -75,6 +76,8 @@ sudo mv cmdbook.py /usr/local/bin/cmdbook
 sudo chmod +x /usr/local/bin/cmdbook
 cmdbook
 ```
+
+On first run, CmdBook will automatically create the required data directory.
 
 ---
 
@@ -138,6 +141,8 @@ python C:\tools\cmdbook.py %*
 cmdbook
 ```
 
+CmdBook will automatically create its data directory on first run.
+
 ---
 
 ## Requirements
@@ -162,7 +167,7 @@ pip install textual rich
 
 ## Data Storage
 
-CmdBook automatically creates its data directory on first run.
+CmdBook stores all commands in an OS-specific location:
 
 Linux:
 
@@ -175,6 +180,8 @@ Windows:
 ```
 C:\Users\YourName\cmdbook\commands.json
 ```
+
+The directory and file are created automatically on first run.
 
 ---
 
