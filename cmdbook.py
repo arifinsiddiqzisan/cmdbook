@@ -5,7 +5,7 @@ from textual.widgets import Header, Footer, ListView, ListItem, Static, Input, B
 from textual.containers import Horizontal, Vertical
 from textual.screen import Screen
 from rich.text import Text
-import json, os
+import json, os, platform
 
 FILE = os.path.expanduser("~/.cmdbook/commands.json")
 
